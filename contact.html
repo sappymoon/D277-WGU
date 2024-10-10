@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>Welcome to Texas Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="header">
+        <header id="home-header">Welcome to Texas!</header>
+        <nav class="navigation-bar">
+            <a href="home.html" id="link">Home</a>
+                <div class="dropdown">
+                    <div id="city-link">Cities</div>
+                    <div class="droplinks" id="city-link">
+                        <a href="dallas.html">Dallas</a>
+                        <a href="houston.html">Houston</a>
+                        <a href="san antonio.html">San Antonio</a>
+                    </div>
+                </div>
+            <a href="contact.html" id="link">Contact</a>
+    </nav>
+
+    <hr/>
+    
+    <form>
+        <div class="form">
+            <label for="fname">First Name</label>
+            <br>
+            <input type="text" id="fname" name="firstname" placeholder="First Name" required>
+        </div>
+
+        <div class="form">
+            <label for="lname">Last Name</label>
+            <br>
+            <input type="text" id="lname" name="lastname" placeholder="Last Name" required>
+        </div>
+
+        <div class="form">
+            <label for="email">E-Mail Address</label>
+            <br>
+            <input type="email" id="email1" required/>
+        </div>
+
+        <div class="form">
+            <label for="email">Verify E-Mail Address</label>
+            <br>
+            <input type="email" id="email2" required/>
+        </div>
+
+        <div class="form">
+            <label for="subject">Questions</label>
+            <br>
+            <textarea id="subject" name="subject" placeholder="Type your questions here" style="height:100px"></textarea>
+        </div>
+
+        <button id="Submit" onclick="verifyEmail()">Submit</button>
+        
+    </form>
+    
+    <br><br><br>
+
+    <p id="verification"></p>
+
+    <script>
+        function verifyEmail(){
+            let email1 = document.getElementById("email1").value;
+            let email2 = document.getElementById("email2").value;
+            
+            if(email1 === email2){
+                document.getElementById("verification").innerHTML = "";
+            }
+            else{
+                document.getElementById("verification").innerHTML = "The E-Mails do not match!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
